@@ -1,21 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <netdb.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-
-#define MAXLINE 8192
-
-void handle_client(int client_fd);
+#include "header.h"
 
 int main(int argc, char *argv[])
 {
+    printf("Testing my debug setup...");
     int listen_fd, port;
     struct sockaddr_in server_addr;
 
-    if (argc != 2) {
+    if (argc != 2) { //insufficient cmd args 
         fprintf(stderr, "Usage: %s <port>\n", argv[0]);
         exit(1);
     }
@@ -43,27 +34,4 @@ int main(int argc, char *argv[])
         handle_client(client_fd);
         close(client_fd);
     }
-}
-
-void handle_client(int client_fd)
-{
-    char buffer[MAXLINE];
-    char method[16], uri[256], version[16];
-    char hostname[256], path[256];
-    int server_fd;
-    struct hostent *server;
-
-    /* TODO: Read request from client */
-
-    /* TODO: Parse HTTP request line */
-
-    /* TODO: Extract hostname and path from URI */
-
-    /* TODO: Connect to remote server */
-
-    /* TODO: Forward request to server */
-
-    /* TODO: Relay response back to client */
-
-    /* TODO: Close server socket */
 }
