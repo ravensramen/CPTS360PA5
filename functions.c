@@ -1,5 +1,7 @@
 #include "header.h"
 
+//takes in client file descriptor 
+
 void handle_client(int client_fd)
 {
     char buffer[MAXLINE];
@@ -7,6 +9,7 @@ void handle_client(int client_fd)
     char hostname[256], path[256];
     int server_fd;
     struct hostent *server;
+
 
     /* TODO: Read request from client */
 
