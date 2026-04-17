@@ -1,18 +1,18 @@
 Sydnee Boothby
 CPTS 360
-04/07
+04/17
 
 This program simulates how web browsers communicate with servers using http.
-Practicing networking and socketing course concepts.
+Practicing networking and socketing concepts. Takes in 2 port address and establishes a socket connection
 
-Run:
-gcc main.c functions.c -o prog
-./prog 8080
+How to Run:
+gcc main.c functions.c -o proxy OR make
+./proxy 8080
 
-Debug:
+Run cmd in another terminal: (setup a request)
+curl -x localhost:8080 http://example.com (had to install curl)
 
-
-Takes in 2 port address and establishes a socket connection
+//Terminal will return the html content of example.com
 
 To-do:
-- Work on handle client function
+- Clean up code + little more testing...
